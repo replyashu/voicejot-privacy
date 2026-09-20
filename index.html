@@ -33,15 +33,17 @@
 <header>
   <div class="wrap">
     <h1>VoiceJot — Privacy Policy</h1>
-    <div class="sub">Last updated: August 5, 2026</div>
+    <div class="sub">Last updated: September 20, 2026</div>
   </div>
 </header>
 <main class="wrap">
   <p>VoiceJot is designed to be private by default.</p>
 
   <div class="card">
-    <strong>Summary:</strong> VoiceJot has no account and no server. Your notes stay on your device.
-    We collect nothing, show no ads, and the app has no internet permission.
+    <strong>Summary:</strong> VoiceJot has no account. Your notes stay on your device. We collect nothing
+    and show no ads. The app goes online for one optional thing only: if you switch on <em>AI pictures</em>
+    for a presentation, that presentation's slide titles (shown to you first) are sent to draw them. Leave it off and nothing
+    is ever sent.
   </div>
 
   <h2>What we collect</h2>
@@ -49,9 +51,47 @@
   We do not collect, transmit, or sell any personal information.</p>
 
   <h2>Your notes</h2>
-  <p>Your notes are stored <strong>only on your device</strong>, in the app's private storage. They never
-  leave your phone and are not backed up to any VoiceJot server (there is no VoiceJot server). Uninstalling
+  <p>Your notes are stored <strong>only on your device</strong>, in the app's private storage. VoiceJot never
+  sends your notes anywhere, and there is no VoiceJot server that stores anything about you. Uninstalling
   the app removes them.</p>
+  <p>Android offers apps an automatic backup to the user's own Google Drive. VoiceJot
+  <strong>excludes your notes from it</strong>, so they are not copied to any cloud service, including
+  Google's. On Android 12 and newer they are still included when you transfer directly from an old phone to
+  a new one, because that copies straight between the two devices; on older versions of Android the two
+  cannot be separated, so notes are left out of that transfer as well. Either way, Settings &rsaquo; Backup
+  exports everything as a file you control.</p>
+
+  <h2>Locked folders</h2>
+  <p>A folder can be locked. Its notes are then encrypted on the device with a key held in the
+  Android Keystore and released only after you confirm your fingerprint, PIN, pattern or password. The
+  key never leaves the device's secure hardware, and VoiceJot keeps the decrypted notes in memory only
+  while the folder is open — closing the app locks it again.</p>
+  <p>Locked folders need Android 11 or newer. On older versions the system cannot tie an encryption
+  key to your PIN or pattern — only to a fingerprint — which would mean losing every note in the folder
+  the moment a new fingerprint was added to the phone. Rather than ship that, the feature is simply
+  absent there.</p>
+  <p>Two things this does <strong>not</strong> cover, stated plainly: the folder's <em>name</em> is
+  stored unencrypted so the app can show that it exists while locked, so avoid putting anything
+  revealing in the name; and a locked note cannot carry a reminder, because a scheduled alarm would
+  keep the note's text in the system's own storage and show it on your lock screen when it fired.</p>
+  <p>Locked notes are not copied to a new phone during a device transfer — the key cannot move with
+  them. Export a backup first if you are changing devices.</p>
+
+  <h2>Presentations, diaries and AI pictures</h2>
+  <p>Presentations and diaries are built on your device. They leave it only when you share or save the
+  file yourself. Reading a diary aloud uses your phone's own text-to-speech voice.</p>
+  <p><strong>AI pictures are optional and off by default.</strong> If you switch them on for a
+  presentation, VoiceJot sends the <em>titles of that presentation's slides</em> — the headings you gave
+  them, for example &ldquo;Pricing&rdquo; — and two of the theme's colours to VoiceJot's picture service,
+  which returns an illustration for each. The exact titles are listed on screen before anything is sent.
+  Nothing else from your notes is sent: not the text on the slides, not the presentation's own title, not
+  any other note. Because a slide title is something you wrote, avoid putting anything in one that you
+  would not want to send. The service runs
+  on Cloudflare Workers AI, keeps no log of what it is asked to draw, stores nothing about you, and uses
+  no account or identifier; like any web request, it necessarily sees your IP address, which it uses only
+  to limit abuse. This is the only thing the app's internet access is used for.</p>
+  <p>&ldquo;Sharpen it with an AI app&rdquo; is different: it hands the outline to an app <em>you</em>
+  choose through Android's share sheet. What that app does with it is governed by its own policy.</p>
 
   <h2>Microphone</h2>
   <p>VoiceJot requests the microphone permission <strong>only</strong> to turn your speech into text when you
@@ -66,6 +106,16 @@
   <ul>
     <li><strong>Microphone (RECORD_AUDIO):</strong> used solely for voice-to-text, only while you hold a
     voice-note session. Never used in the background.</li>
+    <li><strong>Internet (INTERNET):</strong> used only to fetch AI pictures for a presentation when you
+    switch that on. Never used otherwise — no analytics, no ads, no sync.</li>
+    <li><strong>Notifications (POST_NOTIFICATIONS):</strong> used only to show a reminder you set yourself.
+    Requested the first time you set one.</li>
+    <li><strong>Run at startup (RECEIVE_BOOT_COMPLETED):</strong> Android clears pending alarms when the
+    phone restarts, so VoiceJot re-registers your existing reminders after a reboot. Nothing else runs at
+    startup.</li>
+    <li><strong>Alarms &amp; reminders (SCHEDULE_EXACT_ALARM):</strong> lets a reminder fire at the minute
+    you asked for rather than whenever the system next batches alarms. Optional — you grant it in system
+    settings, and reminders still work without it, just approximately.</li>
   </ul>
 
   <h2>Children</h2>
