@@ -33,33 +33,84 @@
 <header>
   <div class="wrap">
     <h1>VoiceJot — Privacy Policy</h1>
-    <div class="sub">Last updated: September 20, 2026</div>
+    <div class="sub">Last updated: October 11, 2026</div>
   </div>
 </header>
 <main class="wrap">
   <p>VoiceJot is designed to be private by default.</p>
 
   <div class="card">
-    <strong>Summary:</strong> VoiceJot has no account. Your notes stay on your device. We collect nothing
-    and show no ads. The app goes online for one optional thing only: if you switch on <em>AI pictures</em>
-    for a presentation, that presentation's slide titles (shown to you first) are sent to draw them. Leave it off and nothing
-    is ever sent.
+    <strong>Summary:</strong> VoiceJot has no account, no ads and no analytics, and your notes — and any
+    photos in them — stay on your phone. The one exception is optional and off by default: if you turn on AI pictures for a
+    presentation, the titles of its slides are sent to draw them.
   </div>
 
   <h2>What we collect</h2>
   <p><strong>Nothing.</strong> VoiceJot has no account, no sign-in, and no analytics or advertising SDKs.
-  We do not collect, transmit, or sell any personal information.</p>
+  We do not collect or sell any personal information. The only thing VoiceJot itself ever sends anywhere
+  is described under <em>AI pictures</em> below, and only when you switch them on.</p>
 
   <h2>Your notes</h2>
-  <p>Your notes are stored <strong>only on your device</strong>, in the app's private storage. VoiceJot never
-  sends your notes anywhere, and there is no VoiceJot server that stores anything about you. Uninstalling
-  the app removes them.</p>
+  <p>Your notes are stored <strong>only on your device</strong>, in the app's private storage. VoiceJot
+  never sends your notes anywhere, and no VoiceJot server stores anything about you. Uninstalling the app
+  removes them.</p>
   <p>Android offers apps an automatic backup to the user's own Google Drive. VoiceJot
   <strong>excludes your notes from it</strong>, so they are not copied to any cloud service, including
   Google's. On Android 12 and newer they are still included when you transfer directly from an old phone to
   a new one, because that copies straight between the two devices; on older versions of Android the two
   cannot be separated, so notes are left out of that transfer as well. Either way, Settings &rsaquo; Backup
   exports everything as a file you control.</p>
+
+  <h2>Photos</h2>
+  <p>If you add photos to notes, you pick each one with Android's photo picker, which hands VoiceJot that
+  one photo — the app has no access to the rest of your gallery and holds no storage permission. VoiceJot
+  keeps its own copy in its private storage, turned upright, scaled down to at most 1600 pixels, and saved without the camera's
+  metadata, so the copy carries no location, date or device details. The copies are treated exactly like
+  your notes: they stay on your device, are excluded from cloud backup, and go with your notes in a direct
+  phone-to-phone transfer. A backup file lists photos by name only and doesn't contain them. Apart from that
+  transfer, a photo leaves the phone only inside a diary PDF that you share or save yourself. Photos can't be added to a locked
+  folder, because they are not encrypted.</p>
+
+  <h2>Trips</h2>
+  <p>A diary can have trip dates — when it started and when you are due home. They are stored on your
+  device with the folder. If you place the trip countdown widget, it shows the days left and the folder's
+  name on your home screen; a locked folder is never shown there.</p>
+
+  <h2>Presentations, diaries and AI pictures</h2>
+  <p>Presentations and diaries are built on your device and leave it only when you share or save the
+  file yourself; a diary PDF includes the photos in its notes. A text report is handed to the app you pick
+  in the share sheet, in the same way. Reading a diary aloud uses your phone's own text-to-speech voice.</p>
+  <p><strong>AI pictures are optional and off by default.</strong> If you switch them on for a
+  presentation, VoiceJot sends the <em>titles of that presentation's slides</em> — the headings you gave
+  them, for example &ldquo;Pricing&rdquo; — and two of the theme's colours to VoiceJot's picture service, which returns
+  an illustration for each. The exact titles are listed on screen before anything is sent. Nothing else
+  from your notes is sent: not the text on the slides, not the presentation's own title, not any other
+  note. Because a slide title is something you wrote, avoid putting anything in one that you would not
+  want to send. The service runs on Cloudflare Workers AI, keeps no log of what it is asked to draw,
+  stores nothing about you and uses no account or identifier; like any web request it sees your IP
+  address, which it uses only to limit abuse. This is the only thing the app's internet access is used
+  for.</p>
+  <p>&ldquo;Sharpen it with an AI app&rdquo; is different: it hands the outline to an app <em>you</em>
+  choose through Android's share sheet. What that app does with it is governed by its own policy.</p>
+
+  <h2>Back-in-signal reminder</h2>
+  <p>If you write notes while your phone has no connection, VoiceJot asks Android to let it know when a
+  connection returns, and may then show one notification offering to send what you wrote. To do this it
+  only asks Android <em>whether</em> a connection exists; it does not connect to anything, and it never
+  sends anything by itself — tapping the reminder lets you choose what to send and with which app. It is on
+  by default, appears at most once every 12 hours, never names a locked folder, and can be turned off in
+  Settings &rsaquo; Reminders.</p>
+
+  <h2>Purchases</h2>
+  <p>VoiceJot Pro is a one-time purchase made through Google Play. Google Play handles the payment;
+  VoiceJot only learns from Google Play whether Pro is unlocked on your account, and never sees your
+  payment details. The purchase is covered by Google Play's own terms and privacy policy.</p>
+
+  <h2>Ratings</h2>
+  <p>After you have shared or saved a presentation or diary, VoiceJot may ask Google Play to show its
+  rating sheet — at most once every four months. The sheet is Google Play's own: any rating or review you
+  leave goes to Google Play under Google's privacy policy, and VoiceJot is not told whether you left
+  one.</p>
 
   <h2>Locked folders</h2>
   <p>A folder can be locked. Its notes are then encrypted on the device with a key held in the
@@ -73,25 +124,10 @@
   <p>Two things this does <strong>not</strong> cover, stated plainly: the folder's <em>name</em> is
   stored unencrypted so the app can show that it exists while locked, so avoid putting anything
   revealing in the name; and a locked note cannot carry a reminder, because a scheduled alarm would
-  keep the note's text in the system's own storage and show it on your lock screen when it fired.</p>
+  keep the note's text in the system's own storage and show it on your lock screen when it fired. For the
+  same reason the daily diary reminder pauses while its folder is locked.</p>
   <p>Locked notes are not copied to a new phone during a device transfer — the key cannot move with
   them. Export a backup first if you are changing devices.</p>
-
-  <h2>Presentations, diaries and AI pictures</h2>
-  <p>Presentations and diaries are built on your device. They leave it only when you share or save the
-  file yourself. Reading a diary aloud uses your phone's own text-to-speech voice.</p>
-  <p><strong>AI pictures are optional and off by default.</strong> If you switch them on for a
-  presentation, VoiceJot sends the <em>titles of that presentation's slides</em> — the headings you gave
-  them, for example &ldquo;Pricing&rdquo; — and two of the theme's colours to VoiceJot's picture service,
-  which returns an illustration for each. The exact titles are listed on screen before anything is sent.
-  Nothing else from your notes is sent: not the text on the slides, not the presentation's own title, not
-  any other note. Because a slide title is something you wrote, avoid putting anything in one that you
-  would not want to send. The service runs
-  on Cloudflare Workers AI, keeps no log of what it is asked to draw, stores nothing about you, and uses
-  no account or identifier; like any web request, it necessarily sees your IP address, which it uses only
-  to limit abuse. This is the only thing the app's internet access is used for.</p>
-  <p>&ldquo;Sharpen it with an AI app&rdquo; is different: it hands the outline to an app <em>you</em>
-  choose through Android's share sheet. What that app does with it is governed by its own policy.</p>
 
   <h2>Microphone</h2>
   <p>VoiceJot requests the microphone permission <strong>only</strong> to turn your speech into text when you
@@ -108,14 +144,22 @@
     voice-note session. Never used in the background.</li>
     <li><strong>Internet (INTERNET):</strong> used only to fetch AI pictures for a presentation when you
     switch that on. Never used otherwise — no analytics, no ads, no sync.</li>
-    <li><strong>Notifications (POST_NOTIFICATIONS):</strong> used only to show a reminder you set yourself.
-    Requested the first time you set one.</li>
+    <li><strong>Network state (ACCESS_NETWORK_STATE):</strong> used only to ask Android whether the phone
+    has a connection, for the back-in-signal reminder. It does not let the app connect to anything.</li>
+    <li><strong>Notifications (POST_NOTIFICATIONS):</strong> used only to show reminders — a note's
+    reminder (one you set, or one taken from a follow-up's date, which you can undo), the daily diary
+    reminder if you turn it on, and the back-in-signal reminder unless you turn it off. Requested the first
+    time a reminder is set.</li>
     <li><strong>Run at startup (RECEIVE_BOOT_COMPLETED):</strong> Android clears pending alarms when the
-    phone restarts, so VoiceJot re-registers your existing reminders after a reboot. Nothing else runs at
-    startup.</li>
+    phone restarts, so VoiceJot re-registers your existing reminders after a reboot, and Android keeps the
+    back-in-signal reminder's wait for a connection. Nothing else runs at startup.</li>
+    <li><strong>Photos:</strong> none. The photo picker hands over only the photos you pick, so no storage
+    or media permission is requested.</li>
     <li><strong>Alarms &amp; reminders (SCHEDULE_EXACT_ALARM):</strong> lets a reminder fire at the minute
     you asked for rather than whenever the system next batches alarms. Optional — you grant it in system
     settings, and reminders still work without it, just approximately.</li>
+    <li><strong>Google Play billing (com.android.vending.BILLING):</strong> lets the app ask Google Play
+    for the one-time Pro purchase.</li>
   </ul>
 
   <h2>Children</h2>
